@@ -1,5 +1,8 @@
 package guru.springframework.dependency_injection.services;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class GreetingServiceImpl implements GreetingService
 {
 	@Override
