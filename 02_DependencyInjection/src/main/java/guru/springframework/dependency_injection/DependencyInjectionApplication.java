@@ -19,6 +19,7 @@ public class DependencyInjectionApplication
 		
 		MyController myController = (MyController) ctx.getBean("myController");
 		
+		System.out.println(">>>>>> Primary Bean <<<<<");
 		System.out.println(myController.sayHello());
 		
 		System.out.println(">>>>> Property <<<<<");
