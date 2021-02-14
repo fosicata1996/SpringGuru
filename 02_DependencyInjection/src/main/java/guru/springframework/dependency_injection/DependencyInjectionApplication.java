@@ -3,7 +3,6 @@ package guru.springframework.dependency_injection;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 
 import guru.springframework.dependency_injection.controllers.ConstructorInjectedController;
 import guru.springframework.dependency_injection.controllers.I18nController;
@@ -12,7 +11,6 @@ import guru.springframework.dependency_injection.controllers.PropertyInjectedCon
 import guru.springframework.dependency_injection.controllers.SetterInjectedController;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "guru.services", "guru.springframework" })
 public class DependencyInjectionApplication
 {
 	

@@ -1,4 +1,4 @@
-package guru.services;
+package guru.springframework.dependency_injection.services;
 
 public interface GreetingService
 {
