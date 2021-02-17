@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 
 import guru.springframework.dependency_injection.controllers.MyController;
 import guru.springframework.dependency_injection.examplebeans.FakeDataSource;
+import guru.springframework.dependency_injection.examplebeans.FakeJmsBroker;
 
 @SpringBootApplication
 public class DependencyInjectionApplication
@@ -17,9 +18,13 @@ public class DependencyInjectionApplication
 		
 		MyController myController = (MyController) ctx.getBean("myController");
 		
-		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
 		
 		System.out.println("######## " + fakeDataSource.getUser());
+		
+		FakeJmsBroker fakeJmsBroker = ctx.getBean(FakeJmsBroker.class);
+		
+		System.out.println("######## " + fakeJmsBroker.getUser());
 		
 	}
 	
