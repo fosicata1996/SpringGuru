@@ -2,6 +2,7 @@ package guru.springframework.controllers;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -90,5 +91,15 @@ public class RecipeControllerTest
 				.andExpect(status().isOk())
 				.andExpect(view().name("recipe/recipeform"))
 				.andExpect(model().attributeExists("recipe"));
+	}
+	
+	@Test
+	public void testDeleteAction() throws Exception
+	{
+		mockMvc.perform(get("/recipe/1/delete"))
+				.andExpect(status().is3xxRedirection())
+				.andExpect(view().name("redirect:/"));
+		
+		verify(recipeService).deleteById(anyLong());
 	}
 }
