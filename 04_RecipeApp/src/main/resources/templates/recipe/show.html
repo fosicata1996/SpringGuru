@@ -45,8 +45,8 @@
 									</ul>
 								</div>
 								<div class="col-md-6">
-									<img src="#" th:src="@{/images/guacamoleWithX.jpg}"
-										 width="150" height="150" />
+									<img src="#" th:src="@{'/recipe/' + ${recipe.id} + '/recipeImage'}"
+										 width="200" height="200" />
 								</div>
 							</div>
 							<div class="row">
